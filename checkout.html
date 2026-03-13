@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELP | Checkout</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      window.ELP_PAYMENT_HOST = "https://elp-payments.onrender.com";
+    </script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -74,6 +77,10 @@
               <input type="radio" name="payment" value="applepay" />
               Apple Pay
             </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="stripe" />
+              Stripe
+            </label>
           </div>
           <button type="submit" class="btn btn-primary">Pay Now</button>
         </form>
@@ -84,6 +91,7 @@
             <span>Visa</span>
             <span>Mastercard</span>
             <span>Apple Pay</span>
+            <span>Stripe</span>
           </div>
           <p>
             Votre paiement est sécurisé grâce à notre partenaire cryptographique.
