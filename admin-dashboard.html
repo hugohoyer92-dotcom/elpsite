@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELP | Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-glow glow-left"></div>
+    <div class="bg-glow glow-right"></div>
+    <header class="global-header">
+      <div class="logo">
+        <span>ELP</span>
+        <small>Gaming Tech</small>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#reviews">Avis</a>
+        <a href="cart.html">Cart</a>
+        <a href="support.html">Support</a>
+        <a href="login.html">Connexion</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="location.href='cart.html'">
+          Panier <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="section admin-page">
+      <header>
+        <p class="eyebrow">Admin</p>
+        <h1>Tableau de bord</h1>
+        <p>Suivez les produits, les commandes, et les clients en un coup d’œil.</p>
+      </header>
+      <div class="admin-grid">
+        <article>
+          <h2>Produits</h2>
+          <p>Actuellement 38 modèles listés. Ajoutez/modifiez les fiches et stock.</p>
+          <button class="btn btn-outline">Gérer les fiches</button>
+        </article>
+        <article>
+          <h2>Commandes</h2>
+          <p>12 commandes en attente de validation, 5 expéditions à confirmer.</p>
+          <button class="btn btn-outline">Voir les commandes</button>
+        </article>
+        <article>
+          <h2>Clients</h2>
+          <p>1 240 membres premium, 82 nouveaux leads cette semaine.</p>
+          <button class="btn btn-outline">Contacter la communauté</button>
+        </article>
+      </div>
+    </main>
+
+    <footer class="global-footer">
+      <div>
+        <strong>ELP</strong>
+        <p>Copyright 2026 · contact@elp-gaming.tech</p>
+      </div>
+      <div class="payment-icons">
+        <span>PayPal</span>
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>Apple Pay</span>
+      </div>
+      <div class="legal-links">
+        <a href="terms.html">Termes</a>
+        <a href="support.html">Support</a>
+      </div>
+    </footer>
+  </body>
+</html>

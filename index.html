@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELP | Equipement gaming & services</title>
+    <meta
+      name="description"
+      content="ELP équipe gamers et streamers avec matériel premium, services pro et support sûr."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-glow glow-left"></div>
+    <div class="bg-glow glow-right"></div>
+    <header class="global-header">
+      <div class="logo">
+        <span>ELP</span>
+        <small>Gaming Tech</small>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#reviews">Avis</a>
+        <a href="cart.html">Cart</a>
+        <a href="support.html">Support</a>
+        <a href="login.html">Connexion</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="location.href='cart.html'">
+          Panier <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-logo-wrapper">
+          <div class="hero-logo">
+            <img src="images/elpimage.jpg" alt="ELP icon rotating" />
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Plateforme professionnelle</p>
+          <h1>ELP propulse votre setup gaming</h1>
+          <p class="lead">
+            ELP est une plateforme spécialisée dans les solutions pour gamers et
+            créateurs de contenu qui veulent améliorer leur expérience de jeu et
+            de streaming.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="products.html">Voir les produits</a>
+            <a class="btn btn-outline" href="services.html">Découvrir nos services</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-figure">
+            <img src="images/elp-alpha.png" alt="ELP energy visual" />
+          </div>
+          <p class="hero-tag">Matériel + services + support dédié</p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div>
+          <p class="eyebrow">À propos de ELP</p>
+          <h2>Matériel premium, service expert</h2>
+          <p>
+            Nous sélectionnons des périphériques et équipements gaming haute
+            performance, et nous enrichissons l’expérience par des services de
+            configuration, optimisation et support technique qui assurent des
+            conversions mesurables pour les streamers et les équipes esports.
+          </p>
+        </div>
+        <div class="about-stat">
+          <div>
+            <strong>+3 200</strong>
+            <p>setups optimisés</p>
+          </div>
+          <div>
+            <strong>24/7</strong>
+            <p>support premium</p>
+          </div>
+          <div>
+            <strong>99,9%</strong>
+            <p>d’expéditions sécurisées</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section featured-products">
+        <header>
+          <p class="eyebrow">Produits vedettes</p>
+          <h2>Des armes visuelles qui performantes</h2>
+        </header>
+        <div class="card-grid">
+          <article class="product-card">
+            <div class="product-image-slider" data-slider-home="capture">
+              <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/capture-1.avif" alt="capture card angle 1" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/capture-2.avif" alt="capture card angle 2" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/capture-3.avif" alt="capture card angle 3" />
+                </div>
+              </div>
+              <button class="slider-arrow right" data-slider-next>›</button>
+            </div>
+            <h3>Capture Cards Premium</h3>
+            <p class="product-preview">
+              Aperçu : La dernière boîte en direct de la carte de capture de jeu 4K Ultra
+              prend en charge 2160p60 HDR, 1440p144Hz et 1080p240Hz en pass-through,
+              et capture jusqu’à 2160p30/1080p120 avec encodage 10 bits HEVC MP4 et HDR.
+            </p>
+            <ul class="product-features">
+              <li>Pass-through 2160p60Hz HDR, 1440p144Hz et 1080p240Hz</li>
+              <li>Enregistrement 1080p120fps &amp; 2160p30fps 10 bits</li>
+              <li>Vidéo non compressée + Audio Line-in 3,5mm</li>
+            </ul>
+            <p class="price">À partir de <strong>99,99€</strong></p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="capture-card-premium"
+              data-title="Capture Card Premium"
+              data-price="99.99"
+            >
+              Ajouter au panier
+            </button>
+          </article>
+          <article class="product-card">
+            <div class="product-image-slider" data-slider-home="monitor">
+              <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/monitor1.jpg" alt="monitor angle 1" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/monitor2.jpg" alt="monitor angle 2" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/monitor3.png" alt="monitor angle 3" />
+                </div>
+              </div>
+              <button class="slider-arrow right" data-slider-next>›</button>
+            </div>
+            <h3>Moniteurs PC Gaming</h3>
+            <p class="product-preview">Écran gaming 24″ avec finition bord à bord, conçu pour offrir un rendu net et des transitions fluides.</p>
+            <ul class="product-features">
+              <li>Fréquence de rafraîchissement : 120Hz</li>
+              <li>Temps de réponse : 1 ms</li>
+              <li>Panneau IPS avec 99% sRGB</li>
+              <li>Aspect ratio 16:9 et contraste 1000:1</li>
+              <li>Éclat 300 cd/m², luminosité RVB</li>
+              <li>Interface : HDMI &amp; DisplayPort</li>
+              <li>Marque OEM/ODM, écran LCD 24″</li>
+              <li>Moule privé activé, origine Guangdong, China</li>
+              <li>Couleur d’affichage : 16,7 millions, consommation ≤30W</li>
+              <li>Bordure sans cadre, support fixe</li>
+            </ul>
+            <p class="price">À partir de <strong>75€</strong></p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="monitor-240hz"
+              data-title="Moniteur PC Gaming 240Hz"
+              data-price="75"
+            >
+              Ajouter au panier
+            </button>
+          </article>
+          <article class="product-card">
+            <div class="product-image-slider" data-slider-home="ds4">
+              <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/byelp-ds4ia.png" alt="DS4 IA guide" />
+                </div>
+              </div>
+              <button class="slider-arrow right" data-slider-next>›</button>
+            </div>
+            <h3>Guide d'installation DS4 IA & Optimisation</h3>
+            <p class="product-preview">
+              Installation complète du DS4 IA incluant mes réglages personnalisés.
+              Profitez d’un aimlock fluide, ultra-performant et conçu pour rester totalement indétectable.
+            </p>
+            <p class="price">À partir de <strong>15€</strong></p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="guide-ds4-ia"
+              data-title="Guide d'installation DS4 IA & Optimisation"
+              data-price="15"
+              data-img="images/byelp-ds4ia.png"
+            >
+              Ajouter au panier
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services-preview">
+        <header>
+          <p class="eyebrow">Services</p>
+          <h2>Services d’accompagnement haut de gamme</h2>
+        </header>
+        <div class="service-grid">
+          <article>
+            <h3>Installation DS4 AI</h3>
+            <p>Téléchargement, installation et vérification de la suite DS4 AI.</p>
+          </article>
+          <article>
+            <h3>Optimisation de configuration</h3>
+            <p>Réglages logiciels, profils capture et calibrage colorimétrique.</p>
+          </article>
+          <article>
+            <h3>Assistance setup</h3>
+            <p>Déploiement complet de la station streaming ou gaming.</p>
+          </article>
+          <article>
+            <h3>Conseil performance</h3>
+            <p>Audits et recommandations adaptées à vos KPIs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section why-choose">
+        <header>
+          <p class="eyebrow">Pourquoi choisir ELP</p>
+          <h2>Nous sommes une équipe de technophiles qui calcule vos conversions.</h2>
+        </header>
+        <div class="why-grid">
+          <article>
+            <h3>Audit pro</h3>
+            <p>Cartographie des besoins et définition d’un roadmap clair.</p>
+          </article>
+          <article>
+            <h3>Livraison sécurisée</h3>
+            <p>Logistique monitorée, packaging anti-choc, assurances renforcées.</p>
+          </article>
+          <article>
+            <h3>Support en continu</h3>
+            <p>Proactif, multicanal, et avec un responsable dédié par commande.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="reviews" class="section review-section">
+        <header>
+          <p class="eyebrow">Avis clients</p>
+          <h2>Des retours qui poussent nos produits plus loin</h2>
+          <p>
+            Les familles ELP partagent leurs notes sur tous les éléments achetés.
+            Laisse ton témoignage ou retrouve les avis générés automatiquement une semaine après ta commande.
+          </p>
+        </header>
+        <div class="reviews-grid">
+          <div class="review-card form-card">
+            <h3>Dépose ton avis</h3>
+            <form id="review-form">
+              <label>
+                Ton nom
+                <input name="reviewerName" type="text" placeholder="Nom ou pseudo" />
+              </label>
+              <label>
+                Note
+                <div class="star-picker" data-star-picker>
+                  <button type="button" data-star="1">★</button>
+                  <button type="button" data-star="2">★</button>
+                  <button type="button" data-star="3">★</button>
+                  <button type="button" data-star="4">★</button>
+                  <button type="button" data-star="5">★</button>
+                </div>
+                <input type="hidden" name="rating" id="review-rating" value="5" />
+              </label>
+              <label>
+                Commentaire
+                <textarea name="reviewComment" rows="4" placeholder="Dis-nous ce que tu as aimé."></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Publier l'avis</button>
+            </form>
+            <small class="help-text">
+              Si tu ne laisses pas d’avis, un message générique se publiera automatiquement une semaine après ta commande.
+            </small>
+          </div>
+          <div class="review-card feed-card">
+            <h3>Derniers avis</h3>
+            <div id="review-list" class="review-list">
+              <!-- Reviews injected by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section support-section">
+        <header>
+          <p class="eyebrow">Support client</p>
+          <h2>Assistance personnalisée et fiable</h2>
+        </header>
+        <div class="support-cards">
+          <article>
+            <h3>Assistance personnalisée</h3>
+            <p>Réponses en moins de 12 minutes et suivi jusqu’à résolution.</p>
+          </article>
+          <article>
+            <h3>Installation guidée</h3>
+            <p>Accompagnement lors des downloads, configurations et tests finaux.</p>
+          </article>
+          <article>
+            <h3>Suivi professionnel</h3>
+            <p>Reporting post-setup pour garder les performances et la stabilité.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trust-section">
+        <header>
+          <p class="eyebrow">Confiance</p>
+          <h2>ELP vous protège à chaque étape</h2>
+        </header>
+        <div class="trust-grid">
+          <article>
+            <h3>Paiements sécurisés</h3>
+            <p>
+              Stripe Checkout et PayPal encryptent chaque transaction ; tokens
+              dynamiques et vérification 3D Secure assurent la conformité.
+            </p>
+          </article>
+          <article>
+            <h3>Support premium</h3>
+            <p>Experts gaming disponibles 24/7, relances régulières et documentation dédiée.</p>
+          </article>
+          <article>
+            <h3>Installation accompagnée</h3>
+            <p>Guides pas-à-pas, accès à DS4 AI, et sessions de configuration live.</p>
+          </article>
+          <article>
+            <h3>Suivi professionnel</h3>
+            <p>Rapports de performance, calibrages et conseils pro pour maintenir l’edge.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div>
+          <h2>Prêt à upgrader votre setup ?</h2>
+          <p>Contactez-nous pour une session de conseil ou un bundle complet.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="support.html">Parler à un expert</a>
+          <a class="btn btn-outline" href="admin-dashboard.html">Espace pro</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="global-footer">
+      <div>
+        <strong>ELP</strong>
+        <p>Copyright 2026 · contact@elp-gaming.tech</p>
+      </div>
+      <div class="payment-icons">
+        <span>PayPal</span>
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>Apple Pay</span>
+      </div>
+      <div class="legal-links">
+        <a href="terms.html">Termes</a>
+        <a href="support.html">Support</a>
+      </div>
+    </footer>
+  </body>
+</html>

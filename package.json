@@ -1,0 +1,17 @@
+{
+  "name": "elp-payments",
+  "version": "1.0.0",
+  "description": "Backend for ELP gaming store payments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.2",
+    "openai": "^4.34.1",
+    "stripe": "^11.2.0"
+  }
+}

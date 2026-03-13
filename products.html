@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELP | Produits</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-glow glow-left"></div>
+    <div class="bg-glow glow-right"></div>
+    <header class="global-header">
+      <div class="logo">
+        <span>ELP</span>
+        <small>Gaming Tech</small>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#reviews">Avis</a>
+        <a href="cart.html">Cart</a>
+        <a href="support.html">Support</a>
+        <a href="login.html">Connexion</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="location.href='cart.html'">
+          Panier <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="section products-page">
+      <header>
+        <p class="eyebrow">Catalogue</p>
+        <h1>Solutions matérielles et accessoires</h1>
+        <p>Matériel sélectionné pour garder vos streams et parties ultra fluides.</p>
+      </header>
+        <div class="card-grid">
+          <article class="product-card">
+            <div class="product-image-slider" data-slider-id="catalog" data-lightbox-target="catalog">
+              <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/capture-1.avif" alt="capture card angle 1" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/capture-2.avif" alt="capture card angle 2" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/capture-3.avif" alt="capture card angle 3" />
+                </div>
+              </div>
+              <button class="slider-arrow right" data-slider-next>›</button>
+            </div>
+            <h3>Capture Card 4K Ultra / 1080p120</h3>
+            <p class="product-preview">
+              Aperçu : La dernière boîte en direct de la carte de capture de jeu
+              4K Ultra prend en charge 2160p60 HDR, 1440p144Hz et 1080p240Hz en
+              pass-through, et capture jusqu’à 2160p30/1080p120 avec encodage
+              10 bits HEVC MP4 et HDR.
+            </p>
+            <ul class="product-features">
+              <li>Pass-through 2160p60Hz HDR, 1440p144Hz et 1080p240Hz</li>
+              <li>Enregistrement 1080p120fps &amp; 2160p30fps 10 bits</li>
+              <li>Vidéo non compressée + Audio Line-in 3,5mm</li>
+            </ul>
+            <p class="price">99,99€</p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="capture-card-4k"
+              data-title="Capture Card 4K Ultra"
+              data-price="99.99"
+              data-img="images/capture-3.avif"
+            >
+              Ajouter au panier
+            </button>
+          </article>
+          <article class="product-card monitor-card">
+            <div class="product-image-slider" data-slider-id="monitor" data-lightbox-target="monitor">
+              <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/monitor3.png" alt="monitor image 3" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/monitor1.jpg" alt="monitor image 1" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/monitor2.jpg" alt="monitor image 2" />
+                </div>
+              </div>
+              <button class="slider-arrow right" data-slider-next>›</button>
+            </div>
+            <h3>Moniteurs PC Gaming</h3>
+            <p>Écran gaming 24″ avec finition bord à bord, conçu pour offrir un rendu net et des transitions fluides.</p>
+            <ul class="product-features">
+              <li>Fréquence de rafraîchissement : 120Hz</li>
+              <li>Temps de réponse : 1 ms</li>
+              <li>Panneau IPS avec 99% sRGB</li>
+              <li>Aspect ratio 16:9 et contraste 1000:1</li>
+              <li>Éclat 300 cd/m², luminosité RVB</li>
+              <li>Interface : HDMI &amp; DisplayPort</li>
+              <li>Marque OEM/ODM, écran LCD 24″</li>
+              <li>Moule privé activé, origine Guangdong, China</li>
+              <li>Couleur d’affichage : 16,7 millions, consommation ≤30W</li>
+              <li>Bordure sans cadre, support fixe</li>
+            </ul>
+            <p class="price">75€</p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="monitor-240hz-qhd"
+              data-title="Moniteur 240Hz QHD"
+              data-price="75"
+              data-img="images/monitor3.png"
+            >
+              Ajouter au panier
+            </button>
+          </article>
+        <article class="product-card">
+          <div class="product-image mic"></div>
+          <h3>Guide d'installation DS4 IA &amp; Optimisation</h3>
+          <p>Installation complète du DS4 IA incluant mes réglages personnalisés. Profitez d'un aimlock fluide, ultra-performant et conçu pour rester totalement indétectable.</p>
+          <p class="price">15€</p>
+            <button
+              class="btn btn-primary"
+              data-add
+              data-id="guide-ds4-ia"
+              data-title="Guide d'installation DS4 IA & Optimisation"
+              data-price="15"
+              data-img="images/byelp-ds4ia.png"
+            >
+            Ajouter au panier
+          </button>
+        </article>
+        <article class="product-card">
+          <div class="product-image desk ryzen"></div>
+          <h3>Ryzen 7 7800X3D</h3>
+          <p>Le processeur 8 cœurs/16 threads avec cache 3D V-Cache pour des performances gaming inégalées et des temps de réponse ultra-rapides.</p>
+          <ul class="product-features">
+            <li>8 cœurs, 16 threads, boost à 5 GHz</li>
+            <li>Cache 3D V-Cache de 96 Mo pour la réactivité en jeu</li>
+            <li>Consommation optimisée à 120 W</li>
+            <li>Support PCIe 5.0 + DDR5 pour les plateformes haut de gamme</li>
+          </ul>
+          <p class="price">310€</p>
+          <button
+            class="btn btn-primary"
+            data-add
+            data-id="ryzen-7800x3d"
+            data-title="Ryzen 7 7800X3D"
+            data-price="310"
+            data-img="images/ryzen-7800x3d.png"
+          >
+            Ajouter au panier
+          </button>
+        </article>
+        <article class="product-card">
+          <div class="product-image-slider" data-slider-id="ram" data-lightbox-target="ram">
+            <button class="slider-arrow left" data-slider-prev>‹</button>
+              <div class="slider-track">
+                <div class="slider-image">
+                  <img src="images/kingston-fury-1.png" alt="RAM Kingston Fury module" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/kingston-fury-2.png" alt="RAM Kingston Fury packaging" />
+                </div>
+                <div class="slider-image">
+                  <img src="images/kingston-fury-3.png" alt="RAM Kingston Fury hero" />
+                </div>
+              </div>
+            <button class="slider-arrow right" data-slider-next>›</button>
+          </div>
+          <h3>Kingston Fury 16 Go</h3>
+          <p>Module DDR5 16 Go Kingston Fury avec fréquence native 6000 MHz, radiateur fin et profils EXPO/XMP prêts à l’emploi pour une compatibilité AMD/Intel extrême.</p>
+          <ul class="product-features">
+            <li>16 Go DDR5, fréquence native 6000 MHz</li>
+            <li>Latence CL38, profils pour overclocking simplifié</li>
+            <li>Silencieux dissipateur aluminium noir</li>
+            <li>Testé pour rester stable avec les setups Ryzen et Intel</li>
+          </ul>
+          <p class="price">220€</p>
+          <button
+            class="btn btn-primary"
+            data-add
+            data-id="kingston-fury-ddr5"
+            data-title="Kingston Fury 16 Go"
+            data-price="220"
+            data-img="images/kingston-fury-1.png"
+          >
+            Ajouter au panier
+          </button>
+        </article>
+      </div>
+      <div class="products-foot">
+        <p>Chaque achat bénéficie d’un service d’installation complet et d’un support dédié.</p>
+        <a class="btn btn-outline" href="services.html">Voir tous les services</a>
+      </div>
+    </main>
+
+    <footer class="global-footer">
+      <div>
+        <strong>ELP</strong>
+        <p>Copyright 2026 · contact@elp-gaming.tech</p>
+      </div>
+      <div class="payment-icons">
+        <span>PayPal</span>
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>Apple Pay</span>
+      </div>
+      <div class="legal-links">
+        <a href="terms.html">Termes</a>
+        <a href="support.html">Support</a>
+      </div>
+    </footer>
+  </body>
+</html>
