@@ -3,6 +3,7 @@ const cors = require("cors");
 const Stripe = require("stripe");
 const paypal = require("@paypal/checkout-server-sdk");
 const { Configuration, OpenAIApi } = require("openai");
+const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
@@ -65,6 +66,42 @@ const createPayPalClient = () => {
 
 const paypalClient = createPayPalClient();
 
+const notificationTransporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST || "smtp.example.com",
+  port: Number(process.env.EMAIL_PORT || 587),
+  secure: process.env.EMAIL_SECURE === "true",
+  auth: {
+    user: process.env.EMAIL_USER || "",
+    pass: process.env.EMAIL_PASS || "",
+  },
+});
+
+const sendPaymentNotification = async (method, payload, extra = {}) => {
+  if (!process.env.PAYMENT_NOTIFY_EMAIL) return;
+  try {
+    const recipient = process.env.PAYMENT_NOTIFY_EMAIL;
+    const subject = `Paiement ${method.toUpperCase()} sur ELP`;
+    const amount = payload.items
+      ? payload.items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+      : 0;
+    const body = `
+      Une nouvelle tentative de paiement ${method.toUpperCase()} a été déclenchée.
+      Client : ${payload.customer?.name || "—"} (${payload.customer?.email || "—"})
+      Montant : ${amount.toFixed?.(2) || amount} EUR
+      Détails supplémentaires : ${extra.details || "Aucun"}
+      Résultat : ${extra.result || "Session générée"}
+    `;
+    await notificationTransporter.sendMail({
+      from: process.env.EMAIL_FROM || "no-reply@elp-gaming.tech",
+      to: recipient,
+      subject,
+      text: body,
+    });
+  } catch (error) {
+    console.error("Notification email error", error);
+  }
+};
+
 app.post("/create-checkout-session", async (req, res) => {
   try {
     const {
@@ -114,6 +151,7 @@ app.post("/create-checkout-session", async (req, res) => {
     });
 
     res.json({ url: session.url });
+    sendPaymentNotification("stripe", { items, customer }, { result: "Stripe checkout session créée" });
   } catch (error) {
     console.error("Stripe checkout error", error);
     res.status(500).json({ error: "Impossible de lancer Stripe Checkout" });
@@ -170,6 +208,7 @@ app.post("/create-paypal-order", async (req, res) => {
       throw new Error("Lien d'approbation PayPal manquant");
     }
     res.json({ approvalUrl: approvalUrl.href });
+    sendPaymentNotification("paypal", { items, customer: {} }, { result: "Commande PayPal prête", details: approvalUrl.href });
   } catch (error) {
     console.error("PayPal order error", error);
     res.status(500).json({ error: "Impossible de lancer PayPal" });
