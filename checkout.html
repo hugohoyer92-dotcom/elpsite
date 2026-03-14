@@ -5,10 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELP | Checkout</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
     <script>
       window.ELP_PAYMENT_HOST = "https://elp-payments.onrender.com";
     </script>
     <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 35%),
+          linear-gradient(180deg, #050011 0%, #050d23 40%, #05000d 100%);
+        color: #f8fbff;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 1rem;
+      }
+      .checkout-wrapper {
+        width: min(520px, 100%);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 30px 60px rgba(9, 14, 45, 0.45);
+        padding: 40px 36px;
+        color: #0e1424;
+        position: relative;
+        overflow: hidden;
+      }
+      .checkout-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(95, 206, 255, 0.25), transparent 45%);
+        pointer-events: none;
+      }
+      .checkout-card {
+        position: relative;
+        z-index: 1;
+      }
+      .checkout-card h1 {
+        font-family: "Poppins", "Inter", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #0d1b36;
+      }
+      .checkout-card p.subtitle {
+        margin-bottom: 2rem;
+        opacity: 0.8;
+        font-size: 0.95rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1.5rem;
+      }
+      .form-group label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #2b2f40;
+      }
+      .form-control {
+        position: relative;
+      }
+      .form-control input,
+      .form-control textarea {
+        width: 100%;
+        height: 48px;
+        border-radius: 12px;
+        border: 1px solid #c8d0e0;
+        padding: 0 16px 0 42px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+        background: #fdfdff;
+      }
+      .form-control textarea {
+        height: 96px;
+        padding: 12px 16px 12px 42px;
+        resize: none;
+      }
+      .form-control input:focus,
+      .form-control textarea:focus {
+        outline: none;
+        border-color: #4a8cff;
+        box-shadow: 0 0 0 3px rgba(74, 140, 255, 0.2);
+      }
+      .form-control .icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4a6ef3;
+      }
+      .form-section {
+        border-top: 1px solid #e6ebf5;
+        padding-top: 1.75rem;
+        margin-top: 1rem;
+      }
+      .form-section:first-of-type {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .payment-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+      }
+      .payment-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+      .primary-btn {
+        width: 100%;
+        padding: 16px;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(135deg, #4a8cff, #9f68ff);
+        color: #fff;
+        font-size: 1rem;
+        font-family: "Poppins", "Inter", sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 15px 30px rgba(74, 140, 255, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .primary-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 30px rgba(74, 140, 255, 0.45);
+      }
+      .payment-icons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+        color: #0d1b36;
+        font-weight: 600;
+      }
+      .payment-icons span {
+        padding: 6px 12px;
+        border-radius: 10px;
+        background: rgba(74, 140, 255, 0.08);
+        border: 1px solid rgba(74, 140, 255, 0.2);
+        font-size: 0.85rem;
+      }
+      @media (max-width: 640px) {
+        body {
+          padding: 2rem 1rem;
+        }
+        .checkout-wrapper {
+          padding: 32px 24px;
+        }
+        .form-control input,
+        .form-control textarea {
+          height: 46px;
+        }
+        .primary-btn {
+          padding: 14px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="bg-glow glow-left"></div>
@@ -41,56 +212,65 @@
         <h1>Finalisez votre commande</h1>
         <p>Choisissez votre méthode de paiement sécurisée et validez.</p>
       </header>
-      <div class="checkout-grid">
-        <form id="checkout-form" class="checkout-form">
-          <label>
-            Nom complet
-            <input name="fullName" type="text" placeholder="Nom et prénom" required />
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" placeholder="email@elp-gaming.tech" required />
-          </label>
-          <label>
-            Adresse de facturation
-            <input name="address" type="text" placeholder="Rue, ville, code postal" required />
-          </label>
-          <label>
-            Informations supplémentaires
-            <textarea name="notes" placeholder="Besoin de configuration ? Nous l'ajouterons."></textarea>
-          </label>
-          <div class="payment-methods">
-            <p>Méthode de paiement</p>
-            <label class="payment-option">
-              <input type="radio" name="payment" value="stripe" checked />
-              Stripe
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Pay Now</button>
-        </form>
-        <aside class="checkout-summary">
-          <h2>Modes acceptés</h2>
-          <div class="payment-icons single">
-            <span>Stripe</span>
-          </div>
-          <p>
-            Votre paiement est sécurisé grâce à notre partenaire cryptographique.
-            Les données sont traitées en TLS 1.3 et stockées de manière chiffrée.
-          </p>
-          <div class="order-summary">
-            <h3>Récapitulatif de commande</h3>
-            <div id="summary-items" class="order-items"></div>
-            <div class="summary-row total-row">
-              <span>Total estimé</span>
-              <strong id="cart-grand-total">0€</strong>
+      <div class="checkout-card">
+        <h1>Finaliser votre commande</h1>
+        <p class="subtitle">Un paiement sécurisé avec Stripe. Toutes les transactions sont protégées par TLS 1.3.</p>
+        <form id="checkout-form">
+          <section class="form-section">
+            <div class="form-group">
+              <label for="fullName">Nom complet</label>
+              <div class="form-control">
+                <span class="icon">👤</span>
+                <input id="fullName" name="fullName" type="text" placeholder="Nom et prénom" required />
+              </div>
             </div>
-          </div>
-          <div class="summary-card">
-            <h3>Total estimé</h3>
-            <p id="checkout-total">0€</p>
-            <small>Le montant peut varier selon votre configuration finale.</small>
-          </div>
-        </aside>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="form-control">
+                <span class="icon">✉️</span>
+                <input id="email" name="email" type="email" placeholder="email@elp-gaming.tech" required />
+              </div>
+            </div>
+          </section>
+          <section class="form-section">
+            <div class="form-group">
+              <label for="address">Adresse de facturation</label>
+              <div class="form-control">
+                <span class="icon">📍</span>
+                <input
+                  id="address"
+                  name="address"
+                  type="text"
+                  placeholder="Rue, ville, code postal"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="notes">Informations supplémentaires</label>
+              <div class="form-control">
+                <span class="icon">📝</span>
+                <textarea id="notes" name="notes" placeholder="Besoin de configuration ? Nous l’ajouterons."></textarea>
+              </div>
+            </div>
+          </section>
+          <section class="form-section">
+            <div class="payment-methods">
+              <p style="font-size: 0.9rem; color: #2b2f40;">Méthode de paiement</p>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="stripe" checked />
+                Stripe
+              </label>
+            </div>
+            <div class="payment-icons">
+              <span>Stripe</span>
+            </div>
+          </section>
+          <button type="submit" class="primary-btn">Payer maintenant</button>
+        </form>
+        <p style="margin-top: 1rem; color: #8894a6; font-size: 0.85rem;">
+          Nous n’enregistrons jamais votre numéro de carte. Stripe gère tous les paiements de manière sécurisée.
+        </p>
       </div>
     </main>
 
