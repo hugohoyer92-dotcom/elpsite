@@ -1221,3 +1221,125 @@ body::after {
     opacity: 0.7;
   }
 }
+
+.about-hero {
+  margin: 4rem auto 3rem;
+  padding: 2rem 2rem 2.5rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top right, rgba(122, 255, 255, 0.18), transparent 55%), rgba(3, 5, 20, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 30px 60px rgba(5, 5, 15, 0.7);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+.about-hero .about-overlay,
+.about-hero .about-visual {
+  position: relative;
+  z-index: 1;
+}
+.about-overlay h2 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  margin-bottom: 0.8rem;
+  font-family: "Poppins", "Inter", sans-serif;
+  color: #f1fbff;
+}
+.about-overlay p {
+  max-width: 500px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+}
+.metric-card {
+  position: relative;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(8, 16, 32, 0.8);
+  border: 1px solid rgba(126, 255, 255, 0.25);
+  color: #f2f6ff;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.metric-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.metric-icon {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+.about-visual .device-stack {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(126, 239, 255, 0.15), rgba(75, 51, 255, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(7, 10, 25, 0.7);
+  overflow: hidden;
+}
+.device-stack::after,
+.device-stack::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 60%);
+}
+.device-stack::after {
+  width: 160px;
+  height: 160px;
+  top: -40px;
+  right: -40px;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+.device-stack::before {
+  width: 120px;
+  height: 120px;
+  bottom: -30px;
+  left: -20px;
+  animation: glowPulse 3.5s ease-in-out infinite alternate;
+}
+.about-hero .btn-outline {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.about-hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
