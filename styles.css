@@ -740,7 +740,7 @@ body::after {
 
 .ai-chat-widget {
   position: fixed;
-  bottom: 28px;
+  bottom: 120px;
   right: 28px;
   z-index: 999;
   display: flex;
