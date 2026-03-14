@@ -1001,3 +1001,223 @@ body::after {
 .auth-form button {
   margin-top: 0.5rem;
 }
+.visual-hero {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, rgba(5, 8, 31, 0.9), rgba(5, 8, 31, 0.6));
+}
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.visual-card {
+  position: relative;
+  min-height: 220px;
+  border-radius: 18px;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.visual-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(90, 120, 255, 0.45);
+}
+.visual-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(74, 140, 255, 0.2), transparent 60%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.gauge .glow-ring {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+.gauge .animation-bar {
+  margin-top: 60px;
+  height: 8px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.gauge .bar-progress {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7effff, #a56bff);
+  animation: loadBar 3s ease infinite;
+}
+.gauge .label-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #7effff;
+  margin-top: 16px;
+  box-shadow: 0 0 20px rgba(126, 255, 255, 0.8);
+}
+.pulse .orbital {
+  position: absolute;
+  inset: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  animation: orbit 4s linear infinite;
+}
+.pulse .orbital .center {
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  background: #a56bff;
+  box-shadow: 0 0 20px rgba(165, 107, 255, 0.8);
+}
+.pulse .pulse-wave {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 140, 255, 0.4), transparent 60%);
+  margin: 0 auto;
+  position: relative;
+  top: 40px;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.waveform .wave-lines {
+  position: absolute;
+  bottom: 30px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.waveform .wave-lines span {
+  flex: 1;
+  height: 60px;
+  background: linear-gradient(180deg, #7effff, #a56bff);
+  border-radius: 999px;
+  animation: wave 1.5s ease-in-out infinite;
+}
+.waveform .wave-lines span:nth-child(2) {
+  animation-delay: 0.2s;
+  height: 40px;
+}
+.waveform .wave-lines span:nth-child(3) {
+  animation-delay: 0.4s;
+  height: 55px;
+}
+.approval {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.approval .checkmark {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5bffef, #8d67ff);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.approval .checkmark::after {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+.approval .sparkle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 40%;
+  background: rgba(126, 255, 255, 0.9);
+  top: 14px;
+  right: 16px;
+  animation: sparkle 1.4s linear infinite;
+}
+@keyframes loadBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.4;
+  }
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes sparkle {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
