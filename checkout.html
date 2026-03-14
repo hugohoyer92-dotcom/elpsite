@@ -18,14 +18,78 @@
     <style>
       body {
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 35%),
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 30%),
           linear-gradient(180deg, #050011 0%, #050d23 40%, #05000d 100%);
         color: #f8fbff;
         min-height: 100vh;
+        margin: 0;
+      }
+      .bg-glow {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .checkout-wrapper {
+        width: min(520px, 100%);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 30px 60px rgba(9, 14, 45, 0.45);
+        padding: 40px 36px;
+        color: #0e1424;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+      .checkout-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(95, 206, 255, 0.25), transparent 45%);
+        pointer-events: none;
+      }
+      header.global-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(5, 8, 31, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1rem 1.5rem;
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding: 3rem 1rem;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      header.global-header nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        color: #f5fafe;
+      }
+      header.global-header nav a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.25rem 0.4rem;
+        border-radius: 999px;
+        transition: background 0.2s ease;
+      }
+      header.global-header nav a:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .header-actions .btn {
+        border-radius: 999px;
+        padding: 0.4rem 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: transparent;
+        color: #fff;
+      }
+      .page-shell {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
       }
       .checkout-wrapper {
         width: min(520px, 100%);
@@ -206,7 +270,8 @@
       </div>
     </header>
 
-    <main class="section checkout-page">
+    <div class="page-shell">
+      <main class="section checkout-page">
       <header>
         <p class="eyebrow">Checkout</p>
         <h1>Finalisez votre commande</h1>
@@ -272,7 +337,8 @@
           Nous n’enregistrons jamais votre numéro de carte. Stripe gère tous les paiements de manière sécurisée.
         </p>
       </div>
-    </main>
+      </main>
+    </div>
 
     <footer class="global-footer">
       <div>
